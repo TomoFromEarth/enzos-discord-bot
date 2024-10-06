@@ -45,10 +45,9 @@ async def fetch_mc_status():
         status = await server.async_status()
 
         response = (
-            f"**État du serveur Minecraft**\n"
+            f"**Voici les moyens de connexion pour ce au serveur**\n\n"
             f"IP: `{MC_SERVER_IP}`\n"
             f"Port: `{MC_SERVER_PORT}`\n"
-            f"Version: `{status.version}`\n"
             f"Joueurs en ligne: `{status.players.online}/{status.players.max}`\n"
         )
         return response

@@ -57,26 +57,8 @@ async def fetch_mc_status():
     
 @bot.command()
 async def mcstatus(ctx):
-    response, status = await fetch_mc_status()
-
-    if status is not None:
-        # Create an embed to dispolay the server status more attractively
-        embed = discord.Embed(
-            title="Voici les moyens de connexion pour ce serveur",
-            color=discord.Color.green()
-        )
-
-        # Adding fields to the embed for better structure
-        embed.add_field(name="IP", value=f"`{MC_SERVER_IP}`", inline=True)
-        embed.add_field(name="Port", value=f"`{MC_SERVER_PORT}`", inline=True)
-        embed.add_field(name="Joureurs en ligne", value=f"`{status.players.online}/{status.players.max}`", inline=True)
-
-        # Set a footer with the name of the user who requested the status
-        embed.set_footer(text=f"Demandé effectuée par {ctx.author.display_name}")
-
-        await ctx.send(embed=embed)
-    else:
-        await ctx.send(response)
+    response = await fetch_mc_status()
+    await ctx.send(response)
 
 if __name__ == "__main__":
     try:

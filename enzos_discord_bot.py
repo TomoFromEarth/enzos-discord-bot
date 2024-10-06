@@ -46,9 +46,9 @@ async def fetch_mc_status():
 
         response = (
             f"**Voici les moyens de connexion pour ce au serveur**\n\n"
-            f"IP: `{MC_SERVER_IP}`\n"
-            f"Port: `{MC_SERVER_PORT}`\n"
-            f"Joueurs en ligne: `{status.players.online}/{status.players.max}`\n"
+            f"**IP**: `{MC_SERVER_IP}`\n"
+            f"**Port**: `{MC_SERVER_PORT}`\n"
+            f"**Joueurs en ligne**: `{status.players.online}/{status.players.max}`\n"
         )
         return response
     except Exception as e:

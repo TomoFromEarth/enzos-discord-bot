@@ -1,0 +1,1 @@
+worker: python enzos_discord_bot.py

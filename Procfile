@@ -1,1 +1,1 @@
-worker: python enzos_discord_bot.py
+worker: python3 enzos_discord_bot.py

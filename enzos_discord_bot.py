@@ -56,8 +56,8 @@ async def fetch_mc_status():
         logging.error(f"Erreur de récupération de l'état du serveur: {e}", exc_info=True)
         return f"A échoué à récupérer l'état du serveur:\n```{e}```"
     
-@bot.command
-async def mc_status(ctx):
+@bot.command()
+async def mcstatus(ctx):
     response = await fetch_mc_status()
     await ctx.send(response)
 
